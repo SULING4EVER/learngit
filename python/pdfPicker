@@ -1,0 +1,23 @@
+##walk the directory tree and pick out all the PDF files
+
+files=[]
+pdf=[]
+import os,shutil
+for foldername,subfolders,filenames in os.walk('F:\\mindi abair\\IT'):
+    
+    #get all the file names under IT directory
+    for filename in filenames:
+        files+=[foldername+'\\'+filename]
+        
+#get all the pdf file names under IT directory
+for j in files:
+    if j.endswith('.pdf'):
+        pdf+=[j]
+
+#copy and paste all the pdf files into the destination
+for h in pdf:
+    shutil.copy(h,'F:\\mindi abair\\pdf')
+
+
+
+
